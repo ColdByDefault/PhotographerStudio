@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Navbar from "./components2/Navbar";
-import Slider from "./components2/Slider";
+import Main from "./components2/Main";
 import Service from "./components2/Service";
 import Contact from "./components2/Contact";
 import OpenTimes from "./components2/OpenTimes";
+import Slider from "./components2/Slider";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -19,14 +20,16 @@ function App() {
       case "opentimes":
         return <OpenTimes />;
       default:
-        return <Slider />;
+        return <div>Home Content</div>;
     }
   };
 
   return (
     <>
       <Navbar setActivePage={setActivePage} />
-      {renderPage()}
+      <Main>
+        {renderPage()}
+      </Main>
     </>
   );
 }
