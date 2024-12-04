@@ -2,7 +2,7 @@ import React from "react";
 
 function OpenTimes() {
   return (
-    <section className="min-h-screen bg-yellow-400 flex items-center justify-center px-6">
+    <section className="w-screen h-screen bg-yellow-400 flex items-center justify-center">
       <div className="text-center text-white">
         <h1 className="text-3xl md:text-4xl font-bold">Opening Times</h1>
         <ul className="mt-4 space-y-2">

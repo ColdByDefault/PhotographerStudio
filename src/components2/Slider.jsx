@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sliderPictures from "../data/sliderPictures";
+import  ImageList  from "./ImageList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,7 +49,8 @@ function Slider() {
     : "";
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
+    <>
+          <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Slider Images */}
       <div
         className={`flex ${transitionStyle}`}
@@ -102,6 +104,10 @@ function Slider() {
         <FontAwesomeIcon icon={faArrowRight} size="lg" />
       </button>
     </div>
+          <div>
+          <ImageList />
+        </div>
+    </>
   );
 }
 

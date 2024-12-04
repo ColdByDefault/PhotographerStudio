@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+
 function Main({ children }) {
   return (
     <>
@@ -26,9 +27,11 @@ function Main({ children }) {
           {children}
         </div>
       </div>
-
       {/* For Smaller Screens */}
-      <div className="block lg:hidden h-screen">{children}</div>
+      <div className="block lg:hidden h-screen">
+        {children}
+      </div>
+
     </>
   );
 }
