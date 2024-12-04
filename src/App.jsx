@@ -28,7 +28,10 @@ function App() {
     <>
       <Navbar setActivePage={setActivePage} />
       <Main>
+      <div>
         {renderPage()}
+      </div>
+
       </Main>
     </>
   );

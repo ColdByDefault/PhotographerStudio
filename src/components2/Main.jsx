@@ -18,8 +18,11 @@ function Main({ children }) {
             <FontAwesomeIcon icon={faInstagram} size="lg" />
           </a>
         </div>
+        <div className="absolute bg-black h-full right-0 z-40 w-12"></div>
+        <div className="absolute bg-black h-full left-0 z-40 w-12"></div>
+        <div className="absolute bg-black h-8 bottom-0 z-40 w-full"></div>
         {/* Children Rendered Inside */}
-        <div className="flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full ">
           {children}
         </div>
       </div>

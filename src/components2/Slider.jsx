@@ -48,7 +48,7 @@ function Slider() {
     : "";
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Slider Images */}
       <div
         className={`flex ${transitionStyle}`}
@@ -90,16 +90,14 @@ function Slider() {
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 
-              rounded-full hover:bg-yellow-400"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2  text-white lg:p-10"
       >
         <FontAwesomeIcon icon={faArrowLeft} size="lg" />
       </button>
       {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 
-              rounded-full hover:bg-yellow-400"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white lg:p-12 "
       >
         <FontAwesomeIcon icon={faArrowRight} size="lg" />
       </button>
