@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import sliderPictures from "../data/sliderPictures";
 import  ImageList  from "./ImageList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,19 +50,16 @@ function Slider() {
 
   return (
     <>
-          <div className="relative w-full h-screen overflow-hidden bg-black">
+      <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Slider Images */}
-      <div
-        className={`flex ${transitionStyle}`}
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+      <div className={`flex ${transitionStyle}`}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {extendedPictures.map((picture, index) => (
           <div key={index} className="w-full h-screen flex-shrink-0 relative">
             <img
               src={picture.src}
               alt={picture.alt}
-              className="w-full h-full object-cover"
-            />
+              className="w-full h-full object-cover"/>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50"></div>
             {index !== 0 && index !== extendedPictures.length - 1 && (
               <div className="absolute bottom-20 left-4 lg:left-16 text-white text-center sm:text-left">
@@ -82,29 +79,26 @@ function Slider() {
         {sliderPictures.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index + 1)} // Offset for extendedPictures
+            onClick={() => setCurrentIndex(index + 1)} 
             className={`w-3 h-3 rounded-full ${
               currentIndex === index + 1 ? "bg-green-400" : "bg-gray-500"
-            }`}
-          ></button>
+            }`}></button>
         ))}
       </div>
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2  text-white lg:p-10"
-      >
-        <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+        className="absolute left-4 top-1/2 transform -translate-y-1/2  text-green-400 lg:p-10">
+        <FontAwesomeIcon icon={faCaretLeft} size="lg" />
       </button>
       {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white lg:p-12 "
-      >
-        <FontAwesomeIcon icon={faArrowRight} size="lg" />
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-green-400 lg:p-12 ">
+        <FontAwesomeIcon icon={faCaretRight} size="lg" />
       </button>
     </div>
-          <div>
+        <div>
           <ImageList />
         </div>
     </>

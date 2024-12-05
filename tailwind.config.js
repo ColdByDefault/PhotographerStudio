@@ -11,6 +11,9 @@ module.exports = {
         '10': '50px', 
         '11': '75px', 
       },
+      fontFamily: {
+        anton: ["Anton", "sans-serif"],
+      },
     },
   },
   plugins: [],

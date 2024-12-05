@@ -5,10 +5,12 @@ import Service from "./components2/Service";
 import Contact from "./components2/Contact";
 import OpenTimes from "./components2/OpenTimes";
 import Slider from "./components2/Slider";
+import LoadingScreen from "./components2/LoadingScreen";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handlePageChange = (page) => {
     if (activePage !== page) {
@@ -37,16 +39,22 @@ function App() {
 
   return (
     <>
-      <Navbar setActivePage={handlePageChange} />
-      <Main>
-        <div
-          className={`transform transition-all duration-500 ease-in-out ${
-            isAnimating ? "opacity-0 scale-75" : "opacity-100 scale-100"
-          }`}
-        >
-          {renderPage()}
-        </div>
-      </Main>
+      {isLoading ? (
+        <LoadingScreen onComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <Navbar setActivePage={handlePageChange} />
+          <Main>
+            <div
+              className={`transform transition-all duration-500 ease-in-out ${
+                isAnimating ? "opacity-0 scale-75" : "opacity-100 scale-100"
+              }`}
+            >
+              {renderPage()}
+            </div>
+          </Main>
+        </>
+      )}
     </>
   );
 }

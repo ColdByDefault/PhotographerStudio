@@ -12,7 +12,7 @@ function Navbar({ setActivePage }) {
         <div className="flex items-center text-xl font-bold cursor-pointer text-green-400 lg:translate-x-80 "
           onClick={() => setActivePage("home")}>
           {/* <img src="/logo.png" alt="" /> */}
-          <h1 className="ml-2 text-white"><span className="text-green-400">Another</span>Project</h1>
+          <h1 className="ml-2 text-white">L<span className="text-green-400">oo</span>nn</h1>
         </div>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
@@ -32,14 +32,14 @@ function Navbar({ setActivePage }) {
             </button>
             <button onClick={() => setActivePage("contact")}
             className="relative text-white group">
-                Kontakt
+                Contact
                 <span className="absolute bottom-0 left-1/2 transform -translate-x-8 w-10 h-[8px]
                 bg-green-500 transition-all duration-300 group-hover:h-[20px] 
                 group-hover:bottom-[2px] -z-10"></span>
             </button>
             <button onClick={() => setActivePage("opentimes")}
             className="relative text-white group">
-                OpenTimes
+                Open Times
                 <span className="absolute bottom-0 left-1/2 transform -translate-x-11 w-14 h-[8px]
                 bg-green-500 transition-all duration-300 group-hover:h-[20px] 
                 group-hover:bottom-[2px] -z-10"></span>
@@ -76,7 +76,7 @@ function Navbar({ setActivePage }) {
             }}
             className="block w-full text-left px-6 py-2 text-gray-700 hover:bg-green-400 
             hover:text-white transition" >
-            Kontakt
+            Contact
           </button>
           <button onClick={() => {
               setActivePage("opentimes");
@@ -84,7 +84,7 @@ function Navbar({ setActivePage }) {
             }}
             className="block w-full text-left px-6 py-2 text-gray-700 hover:bg-green-400 
             hover:text-white transition">
-            OpenTimes
+            Open Times
           </button>
         </div>
       )}
