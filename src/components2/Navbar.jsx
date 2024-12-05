@@ -12,7 +12,7 @@ function Navbar({ setActivePage }) {
         <div className="flex items-center text-xl font-bold cursor-pointer text-yellow-400 lg:translate-x-80 "
           onClick={() => setActivePage("home")}>
           <img src="/logo.png" alt="" />
-          <h1 className="ml-2">Foto Thome</h1>
+          <h1 className="ml-2">Thome</h1>
         </div>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
