@@ -84,7 +84,7 @@ function Slider() {
             key={index}
             onClick={() => setCurrentIndex(index + 1)} // Offset for extendedPictures
             className={`w-3 h-3 rounded-full ${
-              currentIndex === index + 1 ? "bg-yellow-400" : "bg-gray-500"
+              currentIndex === index + 1 ? "bg-green-400" : "bg-gray-500"
             }`}
           ></button>
         ))}
