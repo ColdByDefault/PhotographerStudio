@@ -1,17 +1,41 @@
-**Photographer Website**: [https://www.coldbydefault.com/PhotographerStudio/](https://www.coldbydefault.com/PhotographerStudio/)
+# Loonn *AnotherProject*™
+
+This repository is part of a larger project and is dedicated to a **photographers** that wants to showcase their work. It is built with the following technologies:
+- **React**
+- **Vite**
+- **Tailwind CSS**
+- **NEXT UI**
+- **MUI**
+
 
 ---
-
-# PhotographerStudio
-
-This repository is part of a larger project and is meant solely for showcasing purposes. It is protected under copyright law, and modification or use of its content without permission is strictly prohibited. For more information or inquiries, please contact me directly.
 
 ## Project Information
 
 - **Main Repository**: [ColdByDefault Portfolio](https://github.com/ColdByDefault/coldbydefault.github.io)
 - **Main Website**: [https://www.coldbydefault.com/](https://www.coldbydefault.com/)
+- **Photographer Website**: [https://www.coldbydefault.com/PhotographerStudio/](https://www.coldbydefault.com/PhotographerStudio/)
 
-## Credits
+---
+
+## Features
+
+1. **Responsive Design**: Fully responsive to provide a seamless experience on all devices.
+2. **Dynamic Content**: Showcases the photographer's work dynamically and interactively.
+3. **Modern UI**: Combines NEXT UI and MUI for an elegant, professional design.
+4. **Extensibility**: The project is designed to be extended with additional features.
+5. **Future Updates**: More features and functionality are planned for future releases.
+
+---
+
+
+## License
+
+All rights reserved. For inquiries, licensing, or purchasing rights, please reach out through the contact form on the official website:  
+[LinkTree](https://linktr.ee/ColdByDefault)
+
+
+## Images Credits
 
 The images used in this project are sourced from Unsplash. Special thanks to the following photographers for their amazing work:
 
@@ -41,8 +65,4 @@ The images used in this project are sourced from Unsplash. Special thanks to the
 24. [@luke-braswell](https://unsplash.com/@lukebraswell) - Image 24
 25. [@aiony-haust](https://unsplash.com/@aiony) - Image 25
 
-## License
 
-This project and its contents are copyright-protected. Any unauthorized modification, distribution, or use is strictly prohibited. If you are interested in using this project or its assets, please contact me directly.
-
----
