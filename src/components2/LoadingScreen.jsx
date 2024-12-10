@@ -1,41 +1,80 @@
 import React, { useEffect, useState } from "react";
+import "../styles/glitchEffect.css";
 
-const LoadingScreen = ({ onComplete }) => {
-  const [showProject, setShowProject] = useState(false);
-  const [animateAnother, setAnimateAnother] = useState(false);
+const chars = "-sd_sdf~`gdf!@#dfg$g%gh^&qwe*fdg()+sdf=[]{fg}|sad;:,.<>?";
+
+const TextEncrypted = ({ text, interval = 50 }) => {
+  const [outputText, setOutputText] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const animationTimeout = setTimeout(() => {
-      setAnimateAnother(true);
-      setTimeout(() => setShowProject(true), 500);
-    }, 1000);
+    setIsMounted(true);
+  }, []);
 
-    const completeTimeout = setTimeout(() => {
-      onComplete && onComplete();
-    }, 3000); 
+  useEffect(() => {
+    let timer;
 
-    return () => {
-      clearTimeout(animationTimeout);
-      clearTimeout(completeTimeout);
-    };
+    if (outputText !== text) {
+      timer = setInterval(() => {
+        if (outputText.length < text.length) {
+          setOutputText((prev) => prev + text[prev.length]);
+        } else {
+          clearInterval(timer);
+        }
+      }, interval);
+    }
+
+    return () => clearInterval(timer);
+  }, [text, interval, outputText]);
+
+  const remainder =
+    outputText.length < text.length
+      ? text
+          .slice(outputText.length)
+          .split("")
+          .map(() => chars[Math.floor(Math.random() * chars.length)])
+          .join("")
+      : "";
+
+  if (!isMounted) {
+    return <span> </span>;
+  }
+
+  return (
+    <span
+      className="glitch-effect"
+      data-text={`${outputText}${remainder}`}>
+      {outputText}
+      {remainder}
+    </span>
+  );
+};
+
+function LoadingScreen({ onComplete }) {
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        onComplete();
+      }, 1100);
+    }, 2200);
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-      <div className="relative flex text-white text-xl sm:text-3xl md:text-4xl font-anton">
-        <span className={`transition-transform duration-500 ${
-            animateAnother ? "translate-x-[-20px]" : "translate-x-0"
-          }`}>
-          Another
-        </span>
-        <span className={`text-orange-500 translate-x-[-20px] transition-opacity duration-500 ${
-            showProject ? "opacity-100" : "opacity-0"
-          }`}>
-          Project
-        </span>
-      </div>
+    <div
+      className={`fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center 
+      transition-opacity duration-1000 ${
+        isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}>
+      <h1
+        className="text-xl  mb-8 font-bold drop-shadow-black">
+        <TextEncrypted text="AnotherProject" interval={120} />
+      </h1>
     </div>
   );
-};
+}
 
 export default LoadingScreen;
